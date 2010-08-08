@@ -1,0 +1,36 @@
+importFrom("tools", "file_path_as_absolute")
+importFrom("rJava", ".jaddClassPath", ".jcall", ".jcast", ".jclassLoader", ".jengine", ".jinit", ".jlong", ".jnew", ".jnull", ".jpackage")
+
+export(## the hive
+       "hive",
+       ## System handlers
+       ".hinit",
+       "hive_create",
+       "hive_start",
+       "hive_stop",
+       "hive_is_available",
+       ## DFS wrappers
+       "DFS_cat",
+       "DFS_delete",
+       "DFS_dir_create",
+       "DFS_dir_exists",
+       "DFS_dir_remove",
+       "DFS_file_exists",
+       "DFS_get_object",
+       "DFS_list",
+       "DFS_put",
+       "DFS_put_object",
+       "DFS_read_lines",
+       "DFS_tail",
+       "DFS_write_lines",
+       ## MapReduce functions
+       "hive_stream",
+       ## Configuration
+       "hive_get_parameter",
+       "hive_get_masters",
+       "hive_get_nreducer",
+       "hive_get_slaves",
+       "hive_set_nreducer")
+
+S3method("print", "hive")
+S3method("summary", "hive")
