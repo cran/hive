@@ -1,7 +1,8 @@
-503583339c927364e790170d8fb27b16 *DESCRIPTION
-ce3c524994639a53b71f882dcd04cb4f *NAMESPACE
+b9dc28f23a82d31086bcc7d180ab9331 *ChangeLog
+8234d7318f7b2c70483cd08a6124859c *DESCRIPTION
+7374199c696bb1e020c1fb7fdbcc0b10 *NAMESPACE
 0afbb943ae437a5cecc301eeffa36ca0 *R/configuration.R
-b8895a4cebbb327d56cc34ce3bd26e4d *R/dfs.R
+213477ce0a758482f8a140f7dc11f954 *R/dfs.R
 2a21dbdbb720f3cf764a27d87ae983ee *R/handler.R
 569f763335a8fabcf30092c501584816 *R/java.R
 f86d73a2b7cbc4e63dcc3240bb51fdf2 *R/streaming.R
@@ -9,7 +10,7 @@ f86d73a2b7cbc4e63dcc3240bb51fdf2 *R/streaming.R
 8e29d19bbba63e5c022fcfff7949ef3a *inst/defaults/core/core-default.xml
 2d71951a92e2671017394a6b4b5f39df *inst/defaults/hdfs/hdfs-default.xml
 2a33f7b9720f91beb2b03d45c51a6a47 *inst/defaults/mapred/mapred-default.xml
-eb1bf0496169f43d7d6e3de0db3826b8 *man/DFS.Rd
+311e50ea71fa4226c7e6452058916d98 *man/DFS.Rd
 6a95f52e50a13e347686ec94d26b2eec *man/configuration.Rd
 d7e35aa23758f2486047d4b191fd3b8d *man/hive.Rd
 5e5b33d3c71335fead87a132bdb4b52b *man/hive_stream.Rd
