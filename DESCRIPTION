@@ -1,6 +1,6 @@
 Package: hive
-Version: 0.1-12
-Date: 2011-11-21
+Version: 0.1-13
+Date: 2011-11-29
 Title: Hadoop InteractiVE
 Description: Hadoop InteractiVE, is an R extension facilitating distributed 
              computing via the MapReduce paradigm. It provides an easy to use 
@@ -17,9 +17,9 @@ Enhances: HadoopStreaming
 SystemRequirements: Hadoop core >= 0.19.1
         (http://hadoop.apache.org/core/) or CDH3
         (http://www.cloudera.com); standard unix tools (e.g., chmod)
-Packaged: 2011-11-21 17:24:51 UTC; theussl
+Packaged: 2011-11-29 14:31:30 UTC; theussl
 Author: Ingo Feinerer [aut],
   Stefan Theussl [aut, cre]
 Maintainer: Stefan Theussl <Stefan.Theussl@wu.ac.at>
 Repository: CRAN
-Date/Publication: 2011-11-22 08:45:26
+Date/Publication: 2011-12-01 08:00:17
