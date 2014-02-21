@@ -1,10 +1,10 @@
 cfc45b1cac3da610ed1dc3b5ef771550 *ChangeLog
-72f0aeb547c30d04b09256a2384d9673 *DESCRIPTION
+2066aca72906098109e22980b26da078 *DESCRIPTION
 7374199c696bb1e020c1fb7fdbcc0b10 *NAMESPACE
 0afbb943ae437a5cecc301eeffa36ca0 *R/configuration.R
-213477ce0a758482f8a140f7dc11f954 *R/dfs.R
-126d772c5f48f02f5d0a10f1019ae7b4 *R/handler.R
-569f763335a8fabcf30092c501584816 *R/java.R
+9abc9cfbcd49c77eaf1ed0a05abcd44e *R/dfs.R
+61f9b2cd4c783144757ecfa547c2a076 *R/handler.R
+d567ce3e20428bd5dbd1aac544479808 *R/java.R
 b8ea375582eec9531d52868b54586191 *R/streaming.R
 02eb623d4c25e3f794ad097aae9604fb *R/zzz.R
 8e29d19bbba63e5c022fcfff7949ef3a *inst/defaults/core/core-default.xml
@@ -13,4 +13,4 @@ b8ea375582eec9531d52868b54586191 *R/streaming.R
 311e50ea71fa4226c7e6452058916d98 *man/DFS.Rd
 6a95f52e50a13e347686ec94d26b2eec *man/configuration.Rd
 d7e35aa23758f2486047d4b191fd3b8d *man/hive.Rd
-1b38176740442c3ed8d8ad2fe23e94b2 *man/hive_stream.Rd
+145da0af648d49c44786bdf5b2357a3d *man/hive_stream.Rd
