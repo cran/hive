@@ -127,6 +127,8 @@ DFS_tail <- function(file, n = 6L, size = 1024, henv = hive() ){
   stopifnot( DFS_file_exists(file, henv) )
   out <- .DFS_tail(file, size, henv = henv)
   len <- length(out)
+  if( len < n )
+      n <- len
   out[(len - (n - 1)) : len]
 }
 
@@ -271,10 +273,9 @@ DFS_get_object <- function( file, henv = hive() ) {
 }
 
 .DFS_stat <- function(x, henv){
-    stopifnot( DFS_is_registered(henv) )
-    hdfs <- HDFS(henv)
-    stat <- hdfs$globStatus(HDFS_path(x))
-    if(is.null(stat)){
+    ## globalStatus() has now a different behaviour
+    stat <- DFS_file_exists(x, henv)
+    if(!stat){
         warning(sprintf("cannot stat '%s': No such file or directory", x))
         return(NULL)
     }
@@ -321,7 +322,7 @@ DFS_get_object <- function( file, henv = hive() ) {
 .DFS_format <- function(henv){
   ##machines, DFS_root= "/var/tmp/hadoop"
   stopifnot(hive_stop(henv))
-  machines <- unique(c(hive_get_slaves(henv), hive_get_masters(henv)))
+  machines <- unique(c(hive_get_workers(henv), hive_get_masters(henv)))
   DFS_root <- gsub("\\$\\{user.name\\}", system("whoami", intern = TRUE),
                    hive_get_parameter("hadoop.tmp.dir", henv))
   for(machine in machines){

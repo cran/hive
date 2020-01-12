@@ -5,6 +5,7 @@
 add_java_DFS_support <- function(henv){
     if( !all(hadoop_get_jars(henv) %in% .jclassPath()) ){
         .jaddClassPath( hadoop_get_jars(henv) )
+        .jaddClassPath( file.path(hadoop_home(henv), "etc", "hadoop") )
     }
     if( hadoop_version(henv) >= "2.6.0" ){
         hadoop_src <- file.path(hadoop_home(henv), "share", "doc", "hadoop")
@@ -16,6 +17,8 @@ add_java_DFS_support <- function(henv){
         hdfs_site    <- .jnew( "org/apache/hadoop/fs/Path", file.path(hadoop_home(henv), "etc", "hadoop", "hdfs-site.xml"))
         mapred_default <- .jnew( "org/apache/hadoop/fs/Path", file.path(hadoop_src, "hadoop-mapreduce-client", "hadoop-mapreduce-client-core", "mapred-default.xml") )
         mapred_site  <- .jnew( "org/apache/hadoop/fs/Path", file.path(hadoop_home(henv), "etc", "hadoop", "mapred-site.xml"))
+        yarn_default <- .jnew( "org/apache/hadoop/fs/Path", file.path(hadoop_src, "hadoop-yarn-client", "hadoop-yarn-client-common", "yarn-default.xml") )
+        yarn_site  <- .jnew( "org/apache/hadoop/fs/Path", file.path(hadoop_home(henv), "etc", "hadoop", "yarn-site.xml"))
     } else {
         ## add paths to Hadoop configuration files
         core_default <- .jnew("org/apache/hadoop/fs/Path", file.path(hadoop_home(henv), "src", "core", "core-default.xml"))
@@ -32,8 +35,11 @@ add_java_DFS_support <- function(henv){
     .jcall(configuration, "V", "addResource", hdfs_site)
     .jcall(configuration, "V", "addResource", mapred_default)
     .jcall(configuration, "V", "addResource", mapred_site)
+    if( hadoop_version(henv) >= "2.6.0" ){
+        .jcall(configuration, "V", "addResource", yarn_default)
+        .jcall(configuration, "V", "addResource", yarn_site)
+    }
     
-
   ## Update class loader
   jcl <- .jclassLoader()
   .jcall(configuration, "V", "setClassLoader", .jcast(jcl, "java/lang/ClassLoader"))
